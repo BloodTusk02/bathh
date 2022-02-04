@@ -21,16 +21,39 @@ allLi.forEach((li, index) => {
 });
 
 
+let baseOffset = scrollbar.offset.y;
+let prevActiveIndex = Math.floor(scrollbar.offset.y  / window.screen.width);
+const menuItems = document.querySelector("#fixed > ul:nth-child(1)").children;
 
-let fixedLeft = fixed.offsetLeft;
-let fixedTop = fixed.offsetTop; 
+//Events
+document.addEventListener("pageChanged", (e) => {
+    menuItems[e.detail.prevPage].classList.remove('active');
+    menuItems[e.detail.currPage].classList.add('active');
+});
 
-console.log(fixedLeft, fixedTop);
 
 //Вроде как это будет срабатывать при любом изменении состояния скроллбара
 scrollbar.addListener(function(status) {
     //console.log(status.offset); //Вывод координат
     let offset = status.offset;
-    fixed.style.top = (offset.x + fixedTop).toString() + 'px';
-    fixed.style.left = (offset.y + fixedLeft).toString() + 'px';
+
+    fixed.style.top = offset.x + 'px';
+    fixed.style.left = offset.y + 'px';
+
+    //Смена страниц
+    //const prevItem = document.querySelector(".active");
+    currActiveIndex =  Math.floor(offset.y  / window.screen.width);
+    if(prevActiveIndex != currActiveIndex){
+        const eventDetalis = { 
+            detail:{
+                prevPage: prevActiveIndex,
+                currPage: currActiveIndex
+            }
+        };
+        prevActiveIndex = currActiveIndex;
+
+        const pageChangedEvent = new CustomEvent("pageChanged", eventDetalis);
+        
+        document.dispatchEvent(pageChangedEvent)
+    }
 });
