@@ -5,7 +5,9 @@ const options = {
     'renderByPixels': true,
 };
 
-Scrollbar.init(document.querySelector('#my-scrollbar'), options);
+//Инициализируем окно. Созданный объект заносим в "scrollbar". 
+//Дальнейшее взаимодействие производить надо через этот объект
+const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), options);
 
 const navBar = document.querySelector(".navbar");
 const allLi = document.querySelectorAll("li");
@@ -18,20 +20,10 @@ allLi.forEach((li, index) => {
     });
 });
 
-// scrollbar.addListener(({ offset }) => {  
-//     fixed.style.top = offset.y + 'px';
-//     fixed.style.left = offset.x + 'px';
-//   });
-
-let fixedElem = document.querySelector('#fixed');
-
-let scrollbar = Scrollbar.init(
-    document.querySelector('#scroll')
-  );
-  
-  scrollbar.addListener(function(status) {
-     let offset = status.offset;
-    
-    fixed.style.top = offset.y + 'px';
-    fixed.style.left = offset.x + 'px';
-  });
+//Вроде как это будет срабатывать при любом изменении состояния скроллбара
+scrollbar.addListener(function(status) {
+    //console.log(status.offset); //Вывод координат
+    let offset = status.offset;
+    fixed.style.top = offset.x + 'px';
+    fixed.style.left = offset.y + 'px';
+});

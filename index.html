@@ -10,51 +10,61 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="navbar-fixed" id="scroll">
-    <div class="navbar" id="fixed">
-      <ul>
-        <li class="active">
-          <a href="#">
-            <i class='bx bx-home icon'></i>
-            <i class='bx bxs-home activeIcon'></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-leaf icon'></i>
-            <i class='bx bxs-leaf activeIcon'></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-message-dots icon'></i>
-            <i class='bx bxs-message-dots activeIcon'></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-map-pin icon'></i>
-            <i class='bx bxs-map-pin activeIcon'></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
   <div class="outer-wrapper" id="my-scrollbar">
+      <!--Для такой горизонтальной прокрутки библиотека переворачивает контент. 
+        Если располагать блоки внутри "outer-wrapper", они будут перевёрнуты и иметь другие координаты.
+        Расположенные внутри "wrapper" будут иметь нормальные координаты. Принимай его за тег <body>
+        Если тебе нужно нормальное отображение и не хочешь мучаться с координатами, размещай внутри "wrapper" -->
       <div class="wrapper">
-        
+        <!--Панель навигации-->
+        <div class="navbar" id="fixed">
+          <ul>
+            <li class="active">
+              <a href="#">
+                <i class='bx bx-home icon'></i>
+                <i class='bx bxs-home activeIcon'></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-leaf icon'></i>
+                <i class='bx bxs-leaf activeIcon'></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-message-dots icon'></i>
+                <i class='bx bxs-message-dots activeIcon'></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-map-pin icon'></i>
+                <i class='bx bxs-map-pin activeIcon'></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!--Первый слайд-->
         <div class="slide one">
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis sequi officiis perspiciatis velit, asperiores repellendus quam quisquam et? Sit, voluptates.</p>
+          
         </div>
+
+        <!--Второй слайд-->
         <div class="slide two" id="second">
 
         </div>
+
+        <!--Третий слайд-->
         <div class="slide three" id="third">
 
         </div>
+        
+        <!--Четвёртый слайд-->
         <div class="slide four">
 
-        </div>
         </div>
       </div>
     <script src="node_modules/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
