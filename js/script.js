@@ -20,10 +20,17 @@ allLi.forEach((li, index) => {
     });
 });
 
+
+
+let fixedLeft = fixed.offsetLeft;
+let fixedTop = fixed.offsetTop; 
+
+console.log(fixedLeft, fixedTop);
+
 //Вроде как это будет срабатывать при любом изменении состояния скроллбара
 scrollbar.addListener(function(status) {
     //console.log(status.offset); //Вывод координат
     let offset = status.offset;
-    fixed.style.top = offset.x + 'px';
-    fixed.style.left = offset.y + 'px';
+    fixed.style.top = (offset.x + fixedTop).toString() + 'px';
+    fixed.style.left = (offset.y + fixedLeft).toString() + 'px';
 });
