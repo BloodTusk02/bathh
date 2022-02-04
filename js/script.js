@@ -20,6 +20,7 @@ allLi.forEach((li, index) => {
     });
 });
 
+
 let baseOffset = scrollbar.offset.y;
 let prevActiveIndex = Math.floor(scrollbar.offset.y  / window.screen.width);
 const menuItems = document.querySelector("#fixed > ul:nth-child(1)").children;
@@ -35,6 +36,7 @@ document.addEventListener("pageChanged", (e) => {
 scrollbar.addListener(function(status) {
     //console.log(status.offset); //Вывод координат
     let offset = status.offset;
+
     fixed.style.top = offset.x + 'px';
     fixed.style.left = offset.y + 'px';
 
