@@ -33,7 +33,7 @@ html, body {
   width: 100vh;
   height: 100vw;
   transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
+  transform-origin: top left; 
   overflow-y: scroll;
   overflow-x: hidden;
   position: absolute;
@@ -47,10 +47,6 @@ html, body {
 
 .one {
   background: #f7b4eb;
-}
-
-.one p {
-  margin-top: 200px;
 }
 
 .two {
@@ -114,4 +110,35 @@ ul li a i.activeIcon {
 ul li.active a i {
   opacity: 1;
   pointer-events: auto;
-} 
+}
+
+@media screen and (max-width: 600px) {
+  .outer-wrapper {
+    transform: none;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .wrapper {
+    transform: none;
+    width: auto;
+    flex-direction: column;
+  }
+
+  .navbar {
+    height: 50px;
+    width: 350px;
+    max-width: 100%;
+    box-sizing: border-box;
+    left: calc(50vw - 350px/2);
+  }
+
+  .navbar ul li a i {
+    font-size: 30px;
+  }
+
+  .navbar ul li a {
+    height: 35px;
+    width: 75px;
+  }
+}

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
     <title>Bathhouse</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Boxicons CSS -->
@@ -20,7 +23,7 @@
         <div class="navbar" id="fixed">
           <ul>
             <li class="active">
-              <a href="#firstSlide">
+              <a href="#firstSlide" onclick="firstSlide.scrollIntoView({behavior: 'smooth'})">
                 <i class='bx bx-home icon'></i>
                 <i class='bx bxs-home activeIcon'></i>
               </a>
@@ -67,7 +70,6 @@
         </div>
       </div>
     <script src="node_modules/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
-    <script src="node_modules/smooth-scrollbar/dist/plugins/anchor-plugin.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
